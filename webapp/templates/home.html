@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html class="no-js">
+   <head>
+      <meta charset="utf-8">
+      <title>2FA: Python Example</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width">
+      <link rel="stylesheet" href="/static/css/normalize.css">
+      <link rel="stylesheet" href="/static/css/foundation.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/css/intlTelInput.css">
+      <link rel="stylesheet" href="/static/css/style.css">
+      <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/intlTelInput-jquery.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/intlTelInput.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.js"></script>
+   </head>
+   <body>
+      <div id="wrapper">
+      <section class="header-menu">
+         <div class="content">
+            <div class="menu split--5050">
+                <div class="logo">
+                  Two Factor Authentication Demo
+               </div>
+               <div class="menu-buttons">
+                  <ul class="list-menu">
+                     <li><a href="/">HOME</a></li>
+                     <li><a href="/logout">LOG OUT</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section>
+         <div class="content">
+            <div class="split--5050">
+               <div class="demo-content">
+                  <h1>Hello {{session['username']}}</h1>
+                  {% if session['enable_2FA'] != None %}
+                  <h2>2FA is enabled.</h2>
+                  {% else %}
+                  <h2>Your account do not come with 2FA. Please enable 2FA.</h2>
+                  <form action="/register-2fa" method="POST">
+                    <input type="hidden" id="username" value="{{session['username']}}">
+                    <input class="btn btn-success full-width register-2fa-button" type="button" value="Register 2FA" />
+                  </form>
+                  {% endif %}
+                  <div class="d-none qr-code">
+                    <label>Please scan the below QR code using Google Authenticator app on your mobile device.<br></label>
+                    <div id="img-container"></div>
+                    <input class="btn btn-success full-width" id="finish-2fa" type="button" value="Done">
+                 </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <footer>
+         <div class="footer-content split--3070">
+            <div class="footer-copyright">Build by Group 6</div>
+            <div class="footer-menu">
+               <ul>
+                  <li><a href="/">Home</a></li>
+               </ul>
+            </div>
+         </div>
+      </footer>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+      <script type="text/javascript" src="/static/js/main.js"></script>
+   </body>
+</html>

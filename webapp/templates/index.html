@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html class="no-js">
+   <head>
+      <meta charset="utf-8">
+      <title>2FA: Python Example</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width">
+      <link rel="stylesheet" href="/static/css/normalize.css">
+      <link rel="stylesheet" href="/static/css/foundation.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/css/intlTelInput.css">
+      <link rel="stylesheet" href="/static/css/style.css">
+      <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/intlTelInput-jquery.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/intlTelInput.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.js"></script>
+   </head>
+   <body>
+      <div id="wrapper">
+      <section class="header-menu">
+         <div class="content">
+            <div class="menu split--5050">
+                <div class="logo">
+                  Two Factor Authentication Demo
+               </div>
+               <div class="menu-buttons">
+                  <ul class="list-menu">
+                     <li><a href="/">HOME</a></li>
+                     <li><a href="/">LOG IN</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section>
+         <div class="content">
+            <div class="split--5050">
+               <div class="demo-content">
+                  <h1>Two Factor Authentication Demo</h1>
+                  <h2>Getting Started with Two Factor Authentication :</h2>
+                  <div class="progress-list">
+                     <ul class="events">
+                     <li>Step 1: Login as an user</li>
+                     <li>Step 2: Scan the QR code using Google Authenticator mobile app</li>
+                     <li>Step 3: Verify OTP</li>
+                  </div>
+               </div>
+               <div class="form-section">
+                  <div class="box">
+                     <div class="user"><img src="/static/img/two-factor-user-unit.svg" /></div>
+                     <div class="progress-bar">
+                        <div class="progress-step-1 progress-bar-fill"></div>
+                        <div class="progress-step-2"></div>
+                     </div>
+                     <div class="space-42"></div>
+                     <div class="form-section">
+                        <form action="/login" method="post">
+                           <div class="box-1">
+                              <label>Username</label>
+                              <input type="text" id="username" />
+                              <label>Password</label>
+                              <input type="text" id="password"/>
+                              <input class="btn btn-success full-width login-button" type="button" value="Login" />
+                           </div>
+                           <div class="d-none box-2">
+                              <div class="flex-box"><label>Enter the verification code &nbsp</label></div>
+                              <input type="text" class="verification-code" id="otp" placeholder="Enter the verification code" />
+                              <label class="error-text d-none">Invalid OTP</label>
+                              <input class="btn btn-success full-width verification-code-check-button" type="button" value="Verify" />
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <footer>
+         <div class="footer-content split--3070">
+            <div class="footer-copyright">Build by Group 6</div>
+            <div class="footer-menu">
+               <ul>
+                  <li><a href="/">Home</a></li>
+               </ul>
+            </div>
+         </div>
+      </footer>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+      <script type="text/javascript" src="/static/js/main.js"></script>
+   </body>
+</html>
